@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class PrimeFinder {
     public static void main(String[] args) {
         int limit = 1000000;
-        primzahlFinder(limit);
+        primeFinder(limit);
     }
 
-    private static void primzahlFinder(int limit) {
+    private static void primeFinder(int limit) {
         ArrayList<Integer>  primes = new ArrayList<Integer>();
         long start = System.nanoTime();
         int numberOfPrimes = 1;
@@ -25,10 +25,10 @@ public class PrimeFinder {
             }
         }
         long end = System.nanoTime();
-        System.out.format("Anzahl der Primzahlen unter %d: %d\n", limit, numberOfPrimes);
+        System.out.format("Number of Primes under %d: %d\n", limit, numberOfPrimes);
         double elapsedTimeInSeconds = (double) (end-start) / 1_000_000_000;
-        System.out.format("Gedauert %f\n", elapsedTimeInSeconds);
-        System.out.format("Höchste Primzahl %d\n", primes.get(primes.size() - 1));
+        System.out.format("Elpased Time %f\n", elapsedTimeInSeconds);
+        System.out.format("Highest Prime %d\n", primes.get(primes.size() - 1));
     }
 
     private static int candidateChecker(int candidate) {
