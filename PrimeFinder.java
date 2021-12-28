@@ -2,34 +2,30 @@ import java.util.ArrayList;
 
 public class PrimeFinder {
     public static void main(String[] args) {
-        int grenze = 1000000;
-        primzahlFinder(grenze);
+        int limit = 1000000;
+        primzahlFinder(limit);
     }
 
-    private static void primzahlFinder(int grenze) {
-        //System.out.format("Grenze: %d\n", grenze);
-        //System.out.println("Primzahlen\n");
+    private static void primzahlFinder(int limit) {
         ArrayList<Integer>  primes = new ArrayList<Integer>();
         long start = System.nanoTime();
         int numberOfPrimes = 1;
-        for (int idx = 0; idx < grenze; idx++) {
+        for (int idx = 0; idx < limit; idx++) {
             if ((idx == 0) || (idx == 1)) {
                 continue;
             } else if (idx == 2) {
-                //System.out.format("Primzahl: %d\n", idx);
                 continue;
             } else if (idx % 2 == 0) {
                 continue;
             }
 
             if (candidateChecker(idx) > 0) {
-                // System.out.format("Primzahl: %d\n", idx);
                 primes.add(idx);
                 numberOfPrimes++;
             }
         }
         long end = System.nanoTime();
-        System.out.format("Anzahl der Primzahlen unter %d: %d\n", grenze, numberOfPrimes);
+        System.out.format("Anzahl der Primzahlen unter %d: %d\n", limit, numberOfPrimes);
         double elapsedTimeInSeconds = (double) (end-start) / 1_000_000_000;
         System.out.format("Gedauert %f\n", elapsedTimeInSeconds);
         System.out.format("Höchste Primzahl %d\n", primes.get(primes.size() - 1));
