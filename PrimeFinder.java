@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class PrimeFinder {
     public static void main(String[] args) {
-        int limit = 1000000;
+        int limit = 100000;
         primeFinder(limit);
     }
 
@@ -27,7 +27,7 @@ public class PrimeFinder {
         long end = System.nanoTime();
         System.out.format("Number of Primes under %d: %d\n", limit, numberOfPrimes);
         double elapsedTimeInSeconds = (double) (end-start) / 1_000_000_000;
-        System.out.format("Elpased Time %f\n", elapsedTimeInSeconds);
+        System.out.format("Elpased Time %f seconds.\n", elapsedTimeInSeconds);
         System.out.format("Highest Prime %d\n", primes.get(primes.size() - 1));
     }
 
