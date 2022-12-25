@@ -28,9 +28,9 @@ public class PrimeFinder {
         System.out.println("\n---------------------------------------------------------------------");
         System.out.format("Number of Primes under %d: %d\n", limit, numberOfPrimes);
         double elapsedTimeInSeconds = (double) (end-start) / 1_000_000_000;
-        System.out.format("Elpased Time %f seconds.\n", elapsedTimeInSeconds);
-        System.out.format("Highest Prime %d\n", primes.get(primes.size() - 1));
-        System.out.println("Number are:\n" + primes);
+        System.out.format("Elpased Time: %f seconds\n", elapsedTimeInSeconds);
+        System.out.format("Highest Prime: %d\n", primes.get(primes.size() - 1));
+        System.out.println("Numbers are:\n" + primes);
         System.out.println("---------------------------------------------------------------------\n");
     }
 
